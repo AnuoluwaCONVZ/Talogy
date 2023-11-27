@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../Talogy+R&D+Standardization.Dataset"
+    },
+    "byConnection": null
+  }
+}

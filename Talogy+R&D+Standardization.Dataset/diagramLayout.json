@@ -1,0 +1,100 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 2213.3333333333335,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 2865,
+            "y": 0
+          },
+          "nodeIndex": "Sample Data",
+          "nodeLineageTag": "2574f6c5-cd6b-4d64-b10a-73c955ee7690",
+          "size": {
+            "height": 283,
+            "width": 234
+          },
+          "zIndex": 13
+        },
+        {
+          "location": {
+            "x": 2530,
+            "y": 273
+          },
+          "nodeIndex": "Potential_score",
+          "nodeLineageTag": "32a37250-3dd2-429b-8ad1-50cccb128430",
+          "size": {
+            "height": 124,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 2531.60009765625,
+            "y": 411
+          },
+          "nodeIndex": "Performance_score",
+          "nodeLineageTag": "86990058-956b-4020-b253-1998d9229baf",
+          "size": {
+            "height": 124,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 2528,
+            "y": 0
+          },
+          "nodeIndex": "Category",
+          "nodeLineageTag": "316c24d7-2c52-457f-829b-92155df22965",
+          "size": {
+            "height": 124,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 2529,
+            "y": 138
+          },
+          "nodeIndex": "English_Score",
+          "nodeLineageTag": "5ca45df0-260a-47f6-ac0b-c6129b0e1c00",
+          "size": {
+            "height": 124,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 2869.3333333333335,
+            "y": 382.11111111111109
+          },
+          "nodeIndex": "mappings",
+          "nodeLineageTag": "c769d3bc-b9b4-4c9f-9d53-deb5b0ec404e",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 90,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

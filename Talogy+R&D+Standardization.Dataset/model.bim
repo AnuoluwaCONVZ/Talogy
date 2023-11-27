@@ -1,0 +1,1351 @@
+{
+  "compatibilityLevel": 1567,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"Sample Data\",\"Potential_score\",\"Performance_score\",\"Category\",\"English_Score\",\"mappings\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.122.1066.0 (23.10)"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "DynamicImprovement": "HighConfidence",
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "relationships": [
+      {
+        "name": "1de0b35f-0e1d-4477-9328-62abf245b917",
+        "fromColumn": "Attribute",
+        "fromTable": "Sample Data",
+        "toColumn": "Column",
+        "toTable": "mappings"
+      }
+    ],
+    "sourceQueryCulture": "en-GB",
+    "tables": [
+      {
+        "name": "DateTableTemplate_8d8ed60a-d6b5-4c2e-b3db-9caf37cd4d6c",
+        "annotations": [
+          {
+            "name": "__PBI_TemplateDateTable",
+            "value": "true"
+          },
+          {
+            "name": "DefaultItem",
+            "value": "DateHierarchy"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isNameInferred": true,
+            "lineageTag": "b9d7e649-4dff-401f-8094-4d0d82750063",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "formatString": "0",
+            "lineageTag": "4a6ee9fd-0905-4542-b68a-3813d47fa51f",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "formatString": "0",
+            "lineageTag": "3bd23c2f-ab1c-46ad-b645-0637a1daaf9b",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "lineageTag": "2f97e76c-9f33-4d91-96fa-5588e2483313",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "formatString": "0",
+            "lineageTag": "733ecc4b-13f8-4bdb-9007-1c5922e34a87",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "lineageTag": "59c4929e-6a8a-46ee-b124-82c25eb7a0b9",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "formatString": "0",
+            "lineageTag": "0923e335-6124-4263-909f-71a9416d0061",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "25f27d88-7644-4fbe-8f7a-ff8b35990d6a",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "63f4a747-eef5-447f-b22c-54e0ed648aa3",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "613e56ca-de58-46bf-a4ad-53e6a5b1560f",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "9ec176a9-f04a-405b-a0d2-30685364fbf5",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "c1c30f53-85cb-4f2f-b05a-895a5037771a"
+          }
+        ],
+        "isPrivate": true,
+        "lineageTag": "1bc8137e-d39e-4290-9e1e-5ec1f1dc54ab",
+        "partitions": [
+          {
+            "name": "DateTableTemplate_8d8ed60a-d6b5-4c2e-b3db-9caf37cd4d6c",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(2015,1,1), Date(2015,1,1))",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Sample Data",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Employee ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "74b0c54b-d36c-42c8-abcc-8841844fa621",
+            "sourceColumn": "Employee ID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "Level",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "be43a2c0-93bb-48b0-bc7a-753daf638203",
+            "sourceColumn": "Level",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Candidate Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bb3e26cd-74af-45a5-b221-7ce5b3a6cbc6",
+            "sourceColumn": "Candidate Name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Email",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "813a7886-40f7-461e-86f3-6a75cda3a252",
+            "sourceColumn": "Email",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Centre Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "29ff372b-c976-4e4c-aa54-23728c965fa5",
+            "sourceColumn": "Centre Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Gender",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "30570c6e-ec45-4a76-8e1f-03620d59fd7c",
+            "sourceColumn": "Gender",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Attribute",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "88e7c6e0-66a9-455d-84b3-212de6eb4e1d",
+            "sourceColumn": "Attribute",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Value",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "52c2eaa2-5790-4898-8fcd-50c57c7734ed",
+            "sourceColumn": "Value",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "2574f6c5-cd6b-4d64-b10a-73c955ee7690",
+        "measures": [
+          {
+            "name": "Core_Performer_CAT",
+            "expression": [
+              "",
+              "VAR TotalEmployees = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\"",
+              "    )",
+              "VAR EmployeesWithColourCode1 = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\" && 'Sample Data'[Value] = 5",
+              "    )",
+              "VAR Percentage = DIVIDE(EmployeesWithColourCode1, TotalEmployees, 0)",
+              "RETURN",
+              "    FORMAT(Percentage, \"0%\")"
+            ],
+            "lineageTag": "8df503ba-e7da-4cbe-bcea-ac7f129e274a"
+          },
+          {
+            "name": "Effective_Performer_CAT",
+            "expression": [
+              "",
+              "VAR TotalEmployees = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\"",
+              "    )",
+              "VAR EmployeesWithColourCode1 = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\" && 'Sample Data'[Value] = 2",
+              "    )",
+              "VAR Percentage = DIVIDE(EmployeesWithColourCode1, TotalEmployees, 0)",
+              "RETURN",
+              "    FORMAT(Percentage, \"0%\")"
+            ],
+            "lineageTag": "cac29517-b0b6-40fa-9471-c16642f219a4"
+          },
+          {
+            "name": "Valued_Performer_CAT",
+            "expression": [
+              "",
+              "VAR TotalEmployees = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\"",
+              "    )",
+              "VAR EmployeesWithColourCode1 = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\" && 'Sample Data'[Value] = 3",
+              "    )",
+              "VAR Percentage = DIVIDE(EmployeesWithColourCode1, TotalEmployees, 0)",
+              "RETURN",
+              "    FORMAT(Percentage, \"0%\")"
+            ],
+            "lineageTag": "f56c1f5f-2d56-44a5-bf46-4ae3d78ab826"
+          },
+          {
+            "name": "Inconsistent_Performer_CAT",
+            "expression": [
+              "",
+              "VAR TotalEmployees = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\"",
+              "    )",
+              "VAR EmployeesWithColourCode1 = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\" && 'Sample Data'[Value] = 4",
+              "    )",
+              "VAR Percentage = DIVIDE(EmployeesWithColourCode1, TotalEmployees, 0)",
+              "RETURN",
+              "    FORMAT(Percentage, \"0%\")"
+            ],
+            "lineageTag": "ece9e925-b0a8-4084-a2da-dd4823f10a51"
+          },
+          {
+            "name": "Emerging_Talent_CAT",
+            "expression": [
+              "",
+              "VAR TotalEmployees = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\"",
+              "    )",
+              "VAR EmployeesWithColourCode1 = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\" && 'Sample Data'[Value] = 8",
+              "    )",
+              "VAR Percentage = DIVIDE(EmployeesWithColourCode1, TotalEmployees, 0)",
+              "RETURN",
+              "    FORMAT(Percentage, \"0%\")"
+            ],
+            "lineageTag": "1d6b5830-3e6d-4d1c-95cf-1fa481b003f6"
+          },
+          {
+            "name": "Top_Talent_CAT",
+            "expression": [
+              "",
+              "VAR TotalEmployees = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\"",
+              "    )",
+              "VAR EmployeesWithColourCode1 = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\" && 'Sample Data'[Value] = 9",
+              "    )",
+              "VAR Percentage = DIVIDE(EmployeesWithColourCode1, TotalEmployees, 0)",
+              "RETURN",
+              "    FORMAT(Percentage, \"0%\")"
+            ],
+            "lineageTag": "e84ac0f6-4de8-4180-ab38-d6a9f9d5d669"
+          },
+          {
+            "name": "Rising_Talent_CAT",
+            "expression": [
+              "",
+              "VAR TotalEmployees = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\"",
+              "    )",
+              "VAR EmployeesWithColourCode1 = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\" && 'Sample Data'[Value] = 6",
+              "    )",
+              "VAR Percentage = DIVIDE(EmployeesWithColourCode1, TotalEmployees, 0)",
+              "RETURN",
+              "    FORMAT(Percentage, \"0%\")"
+            ],
+            "lineageTag": "48b06cbf-7858-4a22-ba61-760f0c580326"
+          },
+          {
+            "name": "Promising_Performer_CAT",
+            "expression": [
+              "",
+              "VAR TotalEmployees = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\"",
+              "    )",
+              "VAR EmployeesWithColourCode1 = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\" && 'Sample Data'[Value] = 7",
+              "    )",
+              "VAR Percentage = DIVIDE(EmployeesWithColourCode1, TotalEmployees, 0)",
+              "RETURN",
+              "    FORMAT(Percentage, \"0%\")"
+            ],
+            "lineageTag": "be14dae3-6795-4451-a485-4c24fba80a2e"
+          },
+          {
+            "name": "Struggling_Performer_CAT",
+            "expression": [
+              "",
+              "VAR TotalEmployees = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\"",
+              "    )",
+              "VAR EmployeesWithColourCode1 = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\" && 'Sample Data'[Value] = 1",
+              "    )",
+              "VAR Percentage = DIVIDE(EmployeesWithColourCode1, TotalEmployees, 0)",
+              "RETURN",
+              "    FORMAT(Percentage, \"0%\")"
+            ],
+            "lineageTag": "f0576994-fac8-419c-9138-d3fef66f62f7"
+          },
+          {
+            "name": "Core_Performer_Image#",
+            "expression": [
+              "",
+              "VAR TotalEmployees = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\"",
+              "    )",
+              "VAR EmployeesWithColourCode1 = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\" && 'Sample Data'[Value] = 5",
+              "    )",
+              "VAR Percentage = DIVIDE(EmployeesWithColourCode1, TotalEmployees, 0)",
+              "",
+              "RETURN",
+              "    IF(",
+              "        Percentage = 1,  // Condition for 100% percentage",
+              "        \"https://i.postimg.cc/zX3WpfKw/user.png\",  // Image URL for 100% percentage",
+              "        BLANK()  // Return BLANK() if the condition is not met",
+              "    )",
+              ""
+            ],
+            "lineageTag": "b95c7812-9c0f-4fef-bf4a-51ed31811340"
+          },
+          {
+            "name": "Commitment_radar",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    MAX('Sample Data'[Value]),  ",
+              "    'Sample Data'[Attribute] = \"Commitment\"",
+              ")",
+              ""
+            ],
+            "lineageTag": "0cd61d1c-956c-48a9-828d-753a71948222"
+          },
+          {
+            "name": "Competency_radar",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    MAX('Sample Data'[Value]),  ",
+              "    'Sample Data'[Attribute] = \"Competency\"",
+              ")",
+              ""
+            ],
+            "lineageTag": "f465812e-d4fe-4d1d-897f-1a2a21c73032"
+          },
+          {
+            "name": "Ability_radar",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    MAX('Sample Data'[Value]),  ",
+              "    'Sample Data'[Attribute] = \"Ability\"",
+              ")",
+              ""
+            ],
+            "lineageTag": "15fbc79c-17f2-4a01-b332-da3ed87f7513"
+          },
+          {
+            "name": "Potential_radar",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    MAX('Sample Data'[Value]),  ",
+              "    'Sample Data'[Attribute] = \"Potential (Personality)\"",
+              ")",
+              ""
+            ],
+            "lineageTag": "4a113f27-95e3-43d6-8eac-a55b5a4b22e3"
+          },
+          {
+            "name": "Performance_radar",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    MAX('Sample Data'[Value]),  ",
+              "    'Sample Data'[Attribute] = \"Total Result\"",
+              ")",
+              ""
+            ],
+            "lineageTag": "30d501c1-422e-457d-8c5d-7ec6d1fdb168"
+          },
+          {
+            "name": "Effective_Performer_Image#",
+            "expression": [
+              "",
+              "VAR TotalEmployees = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\"",
+              "    )",
+              "VAR EmployeesWithColourCode1 = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\" && 'Sample Data'[Value] = 2",
+              "    )",
+              "VAR Percentage = DIVIDE(EmployeesWithColourCode1, TotalEmployees, 0)",
+              "",
+              "RETURN",
+              "    IF(",
+              "        Percentage = 1,  // Condition for 100% percentage",
+              "        \"https://i.postimg.cc/zX3WpfKw/user.png\",  // Image URL for 100% percentage",
+              "        BLANK()  // Return BLANK() if the condition is not met",
+              "    )",
+              ""
+            ],
+            "lineageTag": "4237e4be-6792-4620-a2f4-9d4647cb5cd8"
+          },
+          {
+            "name": "Emerging_Talent_Image#",
+            "expression": [
+              "",
+              "VAR TotalEmployees = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\"",
+              "    )",
+              "VAR EmployeesWithColourCode1 = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\" && 'Sample Data'[Value] = 8",
+              "    )",
+              "VAR Percentage = DIVIDE(EmployeesWithColourCode1, TotalEmployees, 0)",
+              "",
+              "RETURN",
+              "    IF(",
+              "        Percentage = 1,  // Condition for 100% percentage",
+              "        \"https://i.postimg.cc/zX3WpfKw/user.png\",  // Image URL for 100% percentage",
+              "        BLANK()  // Return BLANK() if the condition is not met",
+              "    )",
+              ""
+            ],
+            "lineageTag": "57e6d089-8817-4aa2-8584-3f37f81bd40c"
+          },
+          {
+            "name": "Inconsistent_Performer_Image#",
+            "expression": [
+              "",
+              "VAR TotalEmployees = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\"",
+              "    )",
+              "VAR EmployeesWithColourCode1 = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\" && 'Sample Data'[Value] = 4",
+              "    )",
+              "VAR Percentage = DIVIDE(EmployeesWithColourCode1, TotalEmployees, 0)",
+              "",
+              "RETURN",
+              "    IF(",
+              "        Percentage = 1,  // Condition for 100% percentage",
+              "        \"https://i.postimg.cc/zX3WpfKw/user.png\",  // Image URL for 100% percentage",
+              "        BLANK()  // Return BLANK() if the condition is not met",
+              "    )",
+              ""
+            ],
+            "lineageTag": "d5952090-edb8-4d7f-8e17-842d462c4269"
+          },
+          {
+            "name": "Promising_Performer_Image#",
+            "expression": [
+              "",
+              "VAR TotalEmployees = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\"",
+              "    )",
+              "VAR EmployeesWithColourCode1 = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\" && 'Sample Data'[Value] = 7",
+              "    )",
+              "VAR Percentage = DIVIDE(EmployeesWithColourCode1, TotalEmployees, 0)",
+              "",
+              "RETURN",
+              "    IF(",
+              "        Percentage = 1,  // Condition for 100% percentage",
+              "        \"https://i.postimg.cc/zX3WpfKw/user.png\",  // Image URL for 100% percentage",
+              "        BLANK()  // Return BLANK() if the condition is not met",
+              "    )",
+              ""
+            ],
+            "lineageTag": "308309b3-26ce-46e2-a144-c766966bcf1c"
+          },
+          {
+            "name": "Rising_Talent_Image#",
+            "expression": [
+              "",
+              "VAR TotalEmployees = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\"",
+              "    )",
+              "VAR EmployeesWithColourCode1 = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\" && 'Sample Data'[Value] = 6",
+              "    )",
+              "VAR Percentage = DIVIDE(EmployeesWithColourCode1, TotalEmployees, 0)",
+              "",
+              "RETURN",
+              "    IF(",
+              "        Percentage = 1,  // Condition for 100% percentage",
+              "        \"https://i.postimg.cc/zX3WpfKw/user.png\",  // Image URL for 100% percentage",
+              "        BLANK()  // Return BLANK() if the condition is not met",
+              "    )",
+              ""
+            ],
+            "lineageTag": "d279830c-76cf-47e6-ae82-6b1e81312ec0"
+          },
+          {
+            "name": "Struggling_Performer_Image#",
+            "expression": [
+              "",
+              "VAR TotalEmployees = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\"",
+              "    )",
+              "VAR EmployeesWithColourCode1 = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\" && 'Sample Data'[Value] = 1",
+              "    )",
+              "VAR Percentage = DIVIDE(EmployeesWithColourCode1, TotalEmployees, 0)",
+              "",
+              "RETURN",
+              "    IF(",
+              "        Percentage = 1,  // Condition for 100% percentage",
+              "        \"https://i.postimg.cc/zX3WpfKw/user.png\",  // Image URL for 100% percentage",
+              "        BLANK()  // Return BLANK() if the condition is not met",
+              "    )",
+              ""
+            ],
+            "lineageTag": "e4bd715e-538a-40d9-98b1-c0c49bcf041f"
+          },
+          {
+            "name": "Top_Talent_Image#",
+            "expression": [
+              "",
+              "VAR TotalEmployees = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\"",
+              "    )",
+              "VAR EmployeesWithColourCode1 = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\" && 'Sample Data'[Value] = 9",
+              "    )",
+              "VAR Percentage = DIVIDE(EmployeesWithColourCode1, TotalEmployees, 0)",
+              "",
+              "RETURN",
+              "    IF(",
+              "        Percentage = 1,  // Condition for 100% percentage",
+              "        \"https://i.postimg.cc/zX3WpfKw/user.png\",  // Image URL for 100% percentage",
+              "        BLANK()  // Return BLANK() if the condition is not met",
+              "    )",
+              ""
+            ],
+            "lineageTag": "a4eabb3e-cdc5-4937-86d4-9387d8aadd66"
+          },
+          {
+            "name": "Valued_Performer_Image#",
+            "expression": [
+              "",
+              "VAR TotalEmployees = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\"",
+              "    )",
+              "VAR EmployeesWithColourCode1 = ",
+              "    CALCULATE(",
+              "        COUNTROWS('Sample Data'),",
+              "        'Sample Data'[Attribute] = \"Category_Value\" && 'Sample Data'[Value] = 3",
+              "    )",
+              "VAR Percentage = DIVIDE(EmployeesWithColourCode1, TotalEmployees, 0)",
+              "",
+              "RETURN",
+              "    IF(",
+              "        Percentage = 1,  // Condition for 100% percentage",
+              "        \"https://i.postimg.cc/zX3WpfKw/user.png\",  // Image URL for 100% percentage",
+              "        BLANK()  // Return BLANK() if the condition is not met",
+              "    )",
+              ""
+            ],
+            "lineageTag": "e7875e58-9adc-4c55-b01b-e921fd6bdb40"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Sample Data",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\Windows\\Downloads\\Power BI Sample Data Sheet.xlsx\"), null, true),",
+                "    Sheet1_Sheet = Source{[Item=\"Sheet1\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"CANDIDATE INFORMATION\", type any}, {\"Column2\", type text}, {\"Column3\", type text}, {\"Column4\", type text}, {\"Column5\", type text}, {\"Column6\", type text}, {\"9 BOX\", type text}, {\"Column8\", type text}, {\"Column9\", type text}, {\"Column10\", type any}, {\"OVERALL RESULTS\", type any}, {\"Column12\", type any}, {\"Column13\", type any}, {\"Column14\", type any}, {\"Column15\", type any}, {\"ABILITIES\", type any}, {\"Column17\", type any}, {\"Column18\", type any}, {\"Column19\", type any}, {\"Column20\", type any}, {\"Column21\", type any}, {\"Column22\", type any}, {\"Column23\", type any}, {\"PERSONALITY\", type any}, {\"Column25\", type any}, {\"Column26\", type any}, {\"Column27\", type any}, {\"Column28\", type any}, {\"COMPETENCY PERFORMANCE\", type any}, {\"Column30\", type any}, {\"Column31\", type any}, {\"Column32\", type any}, {\"Column33\", type any}, {\"Column34\", type any}, {\"COMMITMENT\", type any}, {\"Column36\", type any}, {\"Column37\", type any}, {\"Column38\", type any}, {\"ENGLISH\", type text}, {\"Column40\", type text}, {\"Column41\", type text}, {\"Column42\", type text}}),",
+                "    #\"Promoted Headers1\" = Table.PromoteHeaders(#\"Changed Type\", [PromoteAllScalars=true]),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Promoted Headers1\",{{\"Employee ID\", Int64.Type}, {\"Level\", type text}, {\"Candidate Name\", type text}, {\"Email\", type text}, {\"Centre Date\", type text}, {\"Gender\", type text}, {\"Potential\", type text}, {\"Performance\", type text}, {\"Category\", type text}, {\"Promotion Rating\", type number}, {\"Ability\", type number}, {\"Potential (Personality)\", type number}, {\"Competency\", type number}, {\"Commitment\", Int64.Type}, {\"Total Result\", type number}, {\"Verbal Percentile\", Int64.Type}, {\"Verbal Score\", type number}, {\"Numerical Percentile\", Int64.Type}, {\"Numerical Score\", type number}, {\"Abstract Percentile\", Int64.Type}, {\"Abstract Score\", type number}, {\"Overall Percentile\", Int64.Type}, {\"Ability Score\", type number}, {\"Grasp\", type number}, {\"Bridge\", type number}, {\"Flex\", type number}, {\"Reach\", type number}, {\"PERSONALITY SCORE\", type number}, {\"Communicate & Relate\", Int64.Type}, {\"Problem Solving\", Int64.Type}, {\"Empowering Human Capital\", Int64.Type}, {\"Strategic Foresight\", Int64.Type}, {\"Driving & Managing Change\", Int64.Type}, {\" COMPETENCY SCORE\", type number}, {\"Affective\", Int64.Type}, {\"Continuence\", Int64.Type}, {\"Normative\", Int64.Type}, {\"COMMITMENT SCORE\", type number}, {\"Listening\", type text}, {\"Reading\", type text}, {\"Grammar\", type text}, {\"ENGLISH SCORE\", type text}}),",
+                "    #\"Merged Queries\" = Table.NestedJoin(#\"Changed Type1\", {\"Performance\"}, Performance_score, {\"Performance\"}, \"Performance_score\", JoinKind.LeftOuter),",
+                "    #\"Expanded Performance_score\" = Table.ExpandTableColumn(#\"Merged Queries\", \"Performance_score\", {\"PerformanceID\"}, {\"Performance_score.PerformanceID\"}),",
+                "    #\"Merged Queries1\" = Table.NestedJoin(#\"Expanded Performance_score\", {\"Potential\"}, Potential_score, {\"Potential\"}, \"Potential_score\", JoinKind.LeftOuter),",
+                "    #\"Expanded Potential_score\" = Table.ExpandTableColumn(#\"Merged Queries1\", \"Potential_score\", {\"Potential ID\"}, {\"Potential_score.Potential ID\"}),",
+                "    #\"Merged Queries2\" = Table.NestedJoin(#\"Expanded Potential_score\", {\"Category\"}, Category, {\"Category\"}, \"Category.1\", JoinKind.LeftOuter),",
+                "    #\"Expanded Category.1\" = Table.ExpandTableColumn(#\"Merged Queries2\", \"Category.1\", {\"Category_Values\"}, {\"Category.1.Category_Values\"}),",
+                "    #\"Merged Queries3\" = Table.NestedJoin(#\"Expanded Category.1\", {\"ENGLISH SCORE\"}, English_Score, {\"ENGLISH SCORE\"}, \"English_Score\", JoinKind.LeftOuter),",
+                "    #\"Expanded English_Score\" = Table.ExpandTableColumn(#\"Merged Queries3\", \"English_Score\", {\"ScoreID\"}, {\"English_Score.ScoreID\"}),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Expanded English_Score\",{\"Listening\", \"Reading\", \"Grammar\", \"ENGLISH SCORE\", \"Potential\", \"Performance\", \"Category\"}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Removed Columns\",{{\"Performance_score.PerformanceID\", \"Performace_Value\"}, {\"Potential_score.Potential ID\", \"Potential_Value\"}, {\"Category.1.Category_Values\", \"Category_Value\"}, {\"English_Score.ScoreID\", \"English_Score_Value\"}}),",
+                "    #\"Unpivoted Other Columns\" = Table.UnpivotOtherColumns(#\"Renamed Columns\", {\"Employee ID\", \"Level\", \"Candidate Name\", \"Email\", \"Centre Date\", \"Gender\"}, \"Attribute\", \"Value\")",
+                "in",
+                "    #\"Unpivoted Other Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Potential_score",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "changedProperties": [
+          {
+            "property": "IsHidden"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Potential",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4d43f71f-9d41-4632-adde-88bfba45a76d",
+            "sourceColumn": "Potential",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Potential ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "7e2f84f7-ba60-4a14-9b36-fb848a01c8fe",
+            "sourceColumn": "Potential ID",
+            "summarizeBy": "count"
+          }
+        ],
+        "lineageTag": "32a37250-3dd2-429b-8ad1-50cccb128430",
+        "partitions": [
+          {
+            "name": "Potential_score",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\Windows\\Downloads\\Power BI Sample Data Sheet.xlsx\"), null, true),",
+                "    Sheet1_Sheet = Source{[Item=\"Sheet1\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"CANDIDATE INFORMATION\", type any}, {\"Column2\", type text}, {\"Column3\", type text}, {\"Column4\", type text}, {\"Column5\", type text}, {\"Column6\", type text}, {\"9 BOX\", type text}, {\"Column8\", type text}, {\"Column9\", type text}, {\"Column10\", type any}, {\"OVERALL RESULTS\", type any}, {\"Column12\", type any}, {\"Column13\", type any}, {\"Column14\", type any}, {\"Column15\", type any}, {\"ABILITIES\", type any}, {\"Column17\", type any}, {\"Column18\", type any}, {\"Column19\", type any}, {\"Column20\", type any}, {\"Column21\", type any}, {\"Column22\", type any}, {\"Column23\", type any}, {\"PERSONALITY\", type any}, {\"Column25\", type any}, {\"Column26\", type any}, {\"Column27\", type any}, {\"Column28\", type any}, {\"COMPETENCY PERFORMANCE\", type any}, {\"Column30\", type any}, {\"Column31\", type any}, {\"Column32\", type any}, {\"Column33\", type any}, {\"Column34\", type any}, {\"COMMITMENT\", type any}, {\"Column36\", type any}, {\"Column37\", type any}, {\"Column38\", type any}, {\"ENGLISH\", type text}, {\"Column40\", type text}, {\"Column41\", type text}, {\"Column42\", type text}}),",
+                "    #\"Promoted Headers1\" = Table.PromoteHeaders(#\"Changed Type\", [PromoteAllScalars=true]),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Promoted Headers1\",{{\"Employee ID\", Int64.Type}, {\"Level\", type text}, {\"Candidate Name\", type text}, {\"Email\", type text}, {\"Centre Date\", type text}, {\"Gender\", type text}, {\"Potential\", type text}, {\"Performance\", type text}, {\"Category\", type text}, {\"Promotion Rating\", type number}, {\"Ability\", type number}, {\"Potential (Personality)\", type number}, {\"Competency\", type number}, {\"Commitment\", Int64.Type}, {\"Total Result\", type number}, {\"Verbal Percentile\", Int64.Type}, {\"Verbal Score\", type number}, {\"Numerical Percentile\", Int64.Type}, {\"Numerical Score\", type number}, {\"Abstract Percentile\", Int64.Type}, {\"Abstract Score\", type number}, {\"Overall Percentile\", Int64.Type}, {\"Ability Score\", type number}, {\"Grasp\", type number}, {\"Bridge\", type number}, {\"Flex\", type number}, {\"Reach\", type number}, {\"PERSONALITY SCORE\", type number}, {\"Communicate & Relate\", Int64.Type}, {\"Problem Solving\", Int64.Type}, {\"Empowering Human Capital\", Int64.Type}, {\"Strategic Foresight\", Int64.Type}, {\"Driving & Managing Change\", Int64.Type}, {\" COMPETENCY SCORE\", type number}, {\"Affective\", Int64.Type}, {\"Continuence\", Int64.Type}, {\"Normative\", Int64.Type}, {\"COMMITMENT SCORE\", type number}, {\"Listening\", type text}, {\"Reading\", type text}, {\"Grammar\", type text}, {\"ENGLISH SCORE\", type text}}),",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type1\",{\"Potential\"}),",
+                "    #\"Removed Duplicates\" = Table.Distinct(#\"Removed Other Columns\"),",
+                "    #\"Added Conditional Column\" = Table.AddColumn(#\"Removed Duplicates\", \"Potential ID\", each if [Potential] = \"High\" then 3 else if [Potential] = \"Moderate\" then 2 else if [Potential] = \"Low\" then 1 else null, type number),",
+                "    #\"Sorted Rows\" = Table.Sort(#\"Added Conditional Column\",{{\"Potential ID\", Order.Ascending}})",
+                "in",
+                "    #\"Sorted Rows\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Performance_score",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Performance",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "63b5ea47-12f5-4839-8552-422766cdeabc",
+            "sourceColumn": "Performance",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "PerformanceID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "8e2e6538-f017-4560-85e0-7b86432d89cf",
+            "sourceColumn": "PerformanceID",
+            "summarizeBy": "count"
+          }
+        ],
+        "lineageTag": "86990058-956b-4020-b253-1998d9229baf",
+        "partitions": [
+          {
+            "name": "Performance_score",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\Windows\\Downloads\\Power BI Sample Data Sheet.xlsx\"), null, true),",
+                "    Sheet1_Sheet = Source{[Item=\"Sheet1\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"CANDIDATE INFORMATION\", type any}, {\"Column2\", type text}, {\"Column3\", type text}, {\"Column4\", type text}, {\"Column5\", type text}, {\"Column6\", type text}, {\"9 BOX\", type text}, {\"Column8\", type text}, {\"Column9\", type text}, {\"Column10\", type any}, {\"OVERALL RESULTS\", type any}, {\"Column12\", type any}, {\"Column13\", type any}, {\"Column14\", type any}, {\"Column15\", type any}, {\"ABILITIES\", type any}, {\"Column17\", type any}, {\"Column18\", type any}, {\"Column19\", type any}, {\"Column20\", type any}, {\"Column21\", type any}, {\"Column22\", type any}, {\"Column23\", type any}, {\"PERSONALITY\", type any}, {\"Column25\", type any}, {\"Column26\", type any}, {\"Column27\", type any}, {\"Column28\", type any}, {\"COMPETENCY PERFORMANCE\", type any}, {\"Column30\", type any}, {\"Column31\", type any}, {\"Column32\", type any}, {\"Column33\", type any}, {\"Column34\", type any}, {\"COMMITMENT\", type any}, {\"Column36\", type any}, {\"Column37\", type any}, {\"Column38\", type any}, {\"ENGLISH\", type text}, {\"Column40\", type text}, {\"Column41\", type text}, {\"Column42\", type text}}),",
+                "    #\"Promoted Headers1\" = Table.PromoteHeaders(#\"Changed Type\", [PromoteAllScalars=true]),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Promoted Headers1\",{{\"Employee ID\", Int64.Type}, {\"Level\", type text}, {\"Candidate Name\", type text}, {\"Email\", type text}, {\"Centre Date\", type text}, {\"Gender\", type text}, {\"Potential\", type text}, {\"Performance\", type text}, {\"Category\", type text}, {\"Promotion Rating\", type number}, {\"Ability\", type number}, {\"Potential (Personality)\", type number}, {\"Competency\", type number}, {\"Commitment\", Int64.Type}, {\"Total Result\", type number}, {\"Verbal Percentile\", Int64.Type}, {\"Verbal Score\", type number}, {\"Numerical Percentile\", Int64.Type}, {\"Numerical Score\", type number}, {\"Abstract Percentile\", Int64.Type}, {\"Abstract Score\", type number}, {\"Overall Percentile\", Int64.Type}, {\"Ability Score\", type number}, {\"Grasp\", type number}, {\"Bridge\", type number}, {\"Flex\", type number}, {\"Reach\", type number}, {\"PERSONALITY SCORE\", type number}, {\"Communicate & Relate\", Int64.Type}, {\"Problem Solving\", Int64.Type}, {\"Empowering Human Capital\", Int64.Type}, {\"Strategic Foresight\", Int64.Type}, {\"Driving & Managing Change\", Int64.Type}, {\" COMPETENCY SCORE\", type number}, {\"Affective\", Int64.Type}, {\"Continuence\", Int64.Type}, {\"Normative\", Int64.Type}, {\"COMMITMENT SCORE\", type number}, {\"Listening\", type text}, {\"Reading\", type text}, {\"Grammar\", type text}, {\"ENGLISH SCORE\", type text}}),",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type1\",{\"Potential\"}),",
+                "    #\"Removed Duplicates\" = Table.Distinct(#\"Removed Other Columns\"),",
+                "    #\"Added Conditional Column\" = Table.AddColumn(#\"Removed Duplicates\", \"Potential ID\", each if [Potential] = \"High\" then 3 else if [Potential] = \"Moderate\" then 2 else if [Potential] = \"Low\" then 1 else null, type number),",
+                "    #\"Sorted Rows\" = Table.Sort(#\"Added Conditional Column\",{{\"Potential ID\", Order.Ascending}}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Sorted Rows\",{{\"Potential\", \"Performance\"}, {\"Potential ID\", \"PerformanceID\"}})",
+                "in",
+                "    #\"Renamed Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Category",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ce8444cf-a363-4dfc-8038-cfdf23b772aa",
+            "sourceColumn": "Category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Category_Values",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "d50f39dd-eb5d-4c1f-a267-8b0968481ca7",
+            "sourceColumn": "Category_Values",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "316c24d7-2c52-457f-829b-92155df22965",
+        "partitions": [
+          {
+            "name": "Category",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\Windows\\Downloads\\Power BI Sample Data Sheet.xlsx\"), null, true),",
+                "    Sheet1_Sheet = Source{[Item=\"Sheet1\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"CANDIDATE INFORMATION\", type any}, {\"Column2\", type text}, {\"Column3\", type text}, {\"Column4\", type text}, {\"Column5\", type text}, {\"Column6\", type text}, {\"9 BOX\", type text}, {\"Column8\", type text}, {\"Column9\", type text}, {\"Column10\", type any}, {\"OVERALL RESULTS\", type any}, {\"Column12\", type any}, {\"Column13\", type any}, {\"Column14\", type any}, {\"Column15\", type any}, {\"ABILITIES\", type any}, {\"Column17\", type any}, {\"Column18\", type any}, {\"Column19\", type any}, {\"Column20\", type any}, {\"Column21\", type any}, {\"Column22\", type any}, {\"Column23\", type any}, {\"PERSONALITY\", type any}, {\"Column25\", type any}, {\"Column26\", type any}, {\"Column27\", type any}, {\"Column28\", type any}, {\"COMPETENCY PERFORMANCE\", type any}, {\"Column30\", type any}, {\"Column31\", type any}, {\"Column32\", type any}, {\"Column33\", type any}, {\"Column34\", type any}, {\"COMMITMENT\", type any}, {\"Column36\", type any}, {\"Column37\", type any}, {\"Column38\", type any}, {\"ENGLISH\", type text}, {\"Column40\", type text}, {\"Column41\", type text}, {\"Column42\", type text}}),",
+                "    #\"Promoted Headers1\" = Table.PromoteHeaders(#\"Changed Type\", [PromoteAllScalars=true]),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Promoted Headers1\",{{\"Employee ID\", Int64.Type}, {\"Level\", type text}, {\"Candidate Name\", type text}, {\"Email\", type text}, {\"Centre Date\", type text}, {\"Gender\", type text}, {\"Potential\", type text}, {\"Performance\", type text}, {\"Category\", type text}, {\"Promotion Rating\", type number}, {\"Ability\", type number}, {\"Potential (Personality)\", type number}, {\"Competency\", type number}, {\"Commitment\", Int64.Type}, {\"Total Result\", type number}, {\"Verbal Percentile\", Int64.Type}, {\"Verbal Score\", type number}, {\"Numerical Percentile\", Int64.Type}, {\"Numerical Score\", type number}, {\"Abstract Percentile\", Int64.Type}, {\"Abstract Score\", type number}, {\"Overall Percentile\", Int64.Type}, {\"Ability Score\", type number}, {\"Grasp\", type number}, {\"Bridge\", type number}, {\"Flex\", type number}, {\"Reach\", type number}, {\"PERSONALITY SCORE\", type number}, {\"Communicate & Relate\", Int64.Type}, {\"Problem Solving\", Int64.Type}, {\"Empowering Human Capital\", Int64.Type}, {\"Strategic Foresight\", Int64.Type}, {\"Driving & Managing Change\", Int64.Type}, {\" COMPETENCY SCORE\", type number}, {\"Affective\", Int64.Type}, {\"Continuence\", Int64.Type}, {\"Normative\", Int64.Type}, {\"COMMITMENT SCORE\", type number}, {\"Listening\", type text}, {\"Reading\", type text}, {\"Grammar\", type text}, {\"ENGLISH SCORE\", type text}}),",
+                "    #\"Merged Queries\" = Table.NestedJoin(#\"Changed Type1\", {\"Potential\"}, Potential_score, {\"Potential\"}, \"Potential_score\", JoinKind.LeftOuter),",
+                "    #\"Expanded Potential_score\" = Table.ExpandTableColumn(#\"Merged Queries\", \"Potential_score\", {\"Potential ID\"}, {\"Potential_score.Potential ID\"}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Expanded Potential_score\",{{\"Potential_score.Potential ID\", \"Potential_value\"}}),",
+                "    #\"Merged Queries1\" = Table.NestedJoin(#\"Renamed Columns\", {\"Performance\"}, Performance_score, {\"Performance\"}, \"Performance_score\", JoinKind.LeftOuter),",
+                "    #\"Expanded Performance_score\" = Table.ExpandTableColumn(#\"Merged Queries1\", \"Performance_score\", {\"PerformanceID\"}, {\"Performance_score.PerformanceID\"}),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Expanded Performance_score\",{{\"Performance_score.PerformanceID\", \"Performance_value\"}}),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Renamed Columns1\",{\"Potential\", \"Performance\"}),",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Removed Columns\",{\"Category\"}),",
+                "    #\"Removed Duplicates\" = Table.Distinct(#\"Removed Other Columns\"),",
+                "    #\"Added Conditional Column\" = Table.AddColumn(#\"Removed Duplicates\", \"Category_Values\", each if [Category] = \"Top Talent\" then 9 else if [Category] = \"Emerging Talent\" then 8 else if [Category] = \"Promising Performer\" then 7 else if [Category] = \"Rising Talent\" then 6 else if [Category] = \"Core Performer\" then 5 else if [Category] = \"Inconsistent Performer\" then 4 else if [Category] = \"Valued Performer\" then 3 else if [Category] = \"Effective Performer\" then 2 else if [Category] = \"Struggling Performer\" then 1 else null),",
+                "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Added Conditional Column\",{{\"Category_Values\", type number}})",
+                "in",
+                "    #\"Changed Type2\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "English_Score",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ENGLISH SCORE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bfd7da8e-ecad-42c4-9259-e538f81ae4b3",
+            "sourceColumn": "ENGLISH SCORE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ScoreID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "dc199281-5942-47c4-93a1-8c011957a611",
+            "sourceColumn": "ScoreID",
+            "summarizeBy": "count"
+          }
+        ],
+        "lineageTag": "5ca45df0-260a-47f6-ac0b-c6129b0e1c00",
+        "partitions": [
+          {
+            "name": "English_Score",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\Windows\\Downloads\\Power BI Sample Data Sheet.xlsx\"), null, true),",
+                "    Sheet1_Sheet = Source{[Item=\"Sheet1\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"CANDIDATE INFORMATION\", type any}, {\"Column2\", type text}, {\"Column3\", type text}, {\"Column4\", type text}, {\"Column5\", type text}, {\"Column6\", type text}, {\"9 BOX\", type text}, {\"Column8\", type text}, {\"Column9\", type text}, {\"Column10\", type any}, {\"OVERALL RESULTS\", type any}, {\"Column12\", type any}, {\"Column13\", type any}, {\"Column14\", type any}, {\"Column15\", type any}, {\"ABILITIES\", type any}, {\"Column17\", type any}, {\"Column18\", type any}, {\"Column19\", type any}, {\"Column20\", type any}, {\"Column21\", type any}, {\"Column22\", type any}, {\"Column23\", type any}, {\"PERSONALITY\", type any}, {\"Column25\", type any}, {\"Column26\", type any}, {\"Column27\", type any}, {\"Column28\", type any}, {\"COMPETENCY PERFORMANCE\", type any}, {\"Column30\", type any}, {\"Column31\", type any}, {\"Column32\", type any}, {\"Column33\", type any}, {\"Column34\", type any}, {\"COMMITMENT\", type any}, {\"Column36\", type any}, {\"Column37\", type any}, {\"Column38\", type any}, {\"ENGLISH\", type text}, {\"Column40\", type text}, {\"Column41\", type text}, {\"Column42\", type text}}),",
+                "    #\"Promoted Headers1\" = Table.PromoteHeaders(#\"Changed Type\", [PromoteAllScalars=true]),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Promoted Headers1\",{{\"Employee ID\", Int64.Type}, {\"Level\", type text}, {\"Candidate Name\", type text}, {\"Email\", type text}, {\"Centre Date\", type text}, {\"Gender\", type text}, {\"Potential\", type text}, {\"Performance\", type text}, {\"Category\", type text}, {\"Promotion Rating\", type number}, {\"Ability\", type number}, {\"Potential (Personality)\", type number}, {\"Competency\", type number}, {\"Commitment\", Int64.Type}, {\"Total Result\", type number}, {\"Verbal Percentile\", Int64.Type}, {\"Verbal Score\", type number}, {\"Numerical Percentile\", Int64.Type}, {\"Numerical Score\", type number}, {\"Abstract Percentile\", Int64.Type}, {\"Abstract Score\", type number}, {\"Overall Percentile\", Int64.Type}, {\"Ability Score\", type number}, {\"Grasp\", type number}, {\"Bridge\", type number}, {\"Flex\", type number}, {\"Reach\", type number}, {\"PERSONALITY SCORE\", type number}, {\"Communicate & Relate\", Int64.Type}, {\"Problem Solving\", Int64.Type}, {\"Empowering Human Capital\", Int64.Type}, {\"Strategic Foresight\", Int64.Type}, {\"Driving & Managing Change\", Int64.Type}, {\" COMPETENCY SCORE\", type number}, {\"Affective\", Int64.Type}, {\"Continuence\", Int64.Type}, {\"Normative\", Int64.Type}, {\"COMMITMENT SCORE\", type number}, {\"Listening\", type text}, {\"Reading\", type text}, {\"Grammar\", type text}, {\"ENGLISH SCORE\", type text}}),",
+                "    #\"Merged Queries\" = Table.NestedJoin(#\"Changed Type1\", {\"Potential\"}, Potential_score, {\"Potential\"}, \"Potential_score\", JoinKind.LeftOuter),",
+                "    #\"Expanded Potential_score\" = Table.ExpandTableColumn(#\"Merged Queries\", \"Potential_score\", {\"Potential ID\"}, {\"Potential_score.Potential ID\"}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Expanded Potential_score\",{{\"Potential_score.Potential ID\", \"Potential_value\"}}),",
+                "    #\"Merged Queries1\" = Table.NestedJoin(#\"Renamed Columns\", {\"Performance\"}, Performance_score, {\"Performance\"}, \"Performance_score\", JoinKind.LeftOuter),",
+                "    #\"Expanded Performance_score\" = Table.ExpandTableColumn(#\"Merged Queries1\", \"Performance_score\", {\"PerformanceID\"}, {\"Performance_score.PerformanceID\"}),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Expanded Performance_score\",{{\"Performance_score.PerformanceID\", \"Performance_value\"}}),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Renamed Columns1\",{\"Potential\", \"Performance\"}),",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Removed Columns\",{\"ENGLISH SCORE\"}),",
+                "    #\"Removed Duplicates\" = Table.Distinct(#\"Removed Other Columns\"),",
+                "    #\"Sorted Rows\" = Table.Sort(#\"Removed Duplicates\",{{\"ENGLISH SCORE\", Order.Ascending}}),",
+                "    #\"Added Index\" = Table.AddIndexColumn(#\"Sorted Rows\", \"Index\", 1, 1, Int64.Type),",
+                "    #\"Renamed Columns2\" = Table.RenameColumns(#\"Added Index\",{{\"Index\", \"ScoreID\"}}),",
+                "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Renamed Columns2\",{{\"ScoreID\", type number}})",
+                "in",
+                "    #\"Changed Type2\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "mappings",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Column",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9a2dff5f-cec6-40f6-a1ec-3c79218810ba",
+            "sourceColumn": "Column",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "50abae48-530f-4263-8675-344a9623b800",
+            "sourceColumn": "Category",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "c769d3bc-b9b4-4c9f-9d53-deb5b0ec404e",
+        "partitions": [
+          {
+            "name": "mappings",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\Windows\\Documents\\Power BI Desktop\\CONVZ\\mappings.xlsx\"), null, true),",
+                "    Sheet1_Sheet = Source{[Item=\"Sheet1\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(Sheet1_Sheet,{{\"Column1\", type text}, {\"Column2\", type text}}),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(#\"Changed Type\", [PromoteAllScalars=true]),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Column\", type text}, {\"Category\", type text}})",
+                "in",
+                "    #\"Changed Type1\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
